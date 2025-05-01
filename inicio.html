@@ -1,0 +1,152 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Explorando el Universo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2c3e50;
+            padding: 40px 20px;
+            text-align: center;
+            color: #ecf0f1;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #2a2a2a;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #00bcd4;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        form {
+            margin-top: 30px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #1f1f1f;
+            color: #ffffff;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #43a047;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            margin-top: 40px;
+        }
+
+        ::placeholder {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Explorando el Universo</h1>
+    <p>Descubre los misterios del cosmos</p>
+</header>
+
+<main>
+    <h2>¿Qué es el Universo?</h2>
+    <p>
+        El universo es todo lo que existe: espacio, tiempo, materia y energía. Nació hace unos 13.800 millones de años con el Big Bang y se expande desde entonces.
+    </p>
+    <p>
+        Con miles de millones de galaxias, estrellas, planetas y fenómenos asombrosos, apenas hemos comenzado a comprender la inmensidad del cosmos. Misiones espaciales y telescopios nos ayudan cada vez más a conocer nuestro lugar en él.
+    </p>
+
+    <h2>Regístrate para seguir explorando</h2>
+    <form onsubmit="enviarFormulario(event)">
+        <label>Usuario:</label>
+        <input type="text" name="usuario" placeholder="Ingresa tu nombre" required>
+
+        <label>Contraseña:</label>
+        <input type="password" name="contraseña" placeholder="Crea una contraseña" required>
+
+        <p><strong>Género:</strong></p>
+        <input type="radio" name="genero" value="Masculino" required> Masculino
+        <input type="radio" name="genero" value="Femenino" required> Femenino
+
+        <br><br>
+        <label>Edad:</label>
+        <select name="edad" required>
+            <option value="">Selecciona tu edad</option>
+            <option value="Mayor de 18">Mayor de 18</option>
+            <option value="Menor de 18">Menor de 18</option>
+        </select>
+
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+</main>
+
+<footer>
+    &copy; 2025 Cosmos Web. Todos los derechos reservados.
+</footer>
+
+<script>
+    function enviarFormulario(event) {
+        event.preventDefault();
+        const usuario = document.querySelector('input[name="usuario"]').value.trim();
+        if (!usuario) {
+            alert("Por favor, ingresa tu nombre.");
+            return;
+        }
+        // Redirige a tu página de bienvenida personalizada
+        window.location.href = `indexj.html?usuario=${encodeURIComponent(usuario)}`;
+    }
+</script>
+
+</body>
+</html>
